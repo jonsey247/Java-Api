@@ -1,0 +1,7 @@
+
+CREATE TABLE `tv` (
+  `tv_Id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `tv_Model` VARCHAR(255) NOT NULL,
+  `wattage` INT(10),
+  PRIMARY KEY (`tv_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
