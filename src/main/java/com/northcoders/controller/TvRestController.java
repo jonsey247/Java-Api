@@ -13,11 +13,13 @@ public class TvRestController {
     @Autowired
     protected TvRepository tvRepository;
 
+    @CrossOrigin("*")
     @RequestMapping(value="/tvs", method = RequestMethod.GET)
     public List<Tv> getAllTvs() {
         return (List<Tv>)tvRepository.findAll();
     }
 
+    @CrossOrigin("*")
     @RequestMapping(value="/tvs/{tvId}", method = RequestMethod.GET)
     public Tv getIndividualTv(@PathVariable Long tvId) {
         Tv tv = tvRepository.findOne(tvId);
@@ -25,6 +27,7 @@ public class TvRestController {
         return tv;
     }
 
+    @CrossOrigin("*")
     @RequestMapping(value="/tvs/{tvId}", method = RequestMethod.POST)
     public void saveTv(@RequestBody Tv tv) {
         tvRepository.save(tv);
