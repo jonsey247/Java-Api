@@ -1,6 +1,8 @@
 package com.northcoders.model;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 @Entity
 public class Tv {
@@ -20,6 +22,7 @@ public class Tv {
     }
 
     @Column(name="tv_Model")
+    @NotEmpty
     public String getTvModel() {
         return tvModel;
     }
@@ -29,6 +32,7 @@ public class Tv {
     }
 
     @Column(name="wattage")
+    @Min(value = 100, message = "The wattage should be at least 100")
     public int getWattage() {
         return wattage;
     }

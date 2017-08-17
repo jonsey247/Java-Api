@@ -4,7 +4,7 @@ import com.northcoders.model.Tv;
 import com.northcoders.repository.TvRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,7 +29,7 @@ public class TvRestController {
 
     @CrossOrigin("*")
     @RequestMapping(value="/tvs/{tvId}", method = RequestMethod.POST)
-    public void saveTv(@RequestBody Tv tv) {
+    public void saveTv(@Valid @RequestBody Tv tv) {
         tvRepository.save(tv);
     }
 }
