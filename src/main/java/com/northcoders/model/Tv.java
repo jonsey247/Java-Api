@@ -22,7 +22,7 @@ public class Tv {
     }
 
     @Column(name="tv_Model")
-    @NotEmpty
+    @NotEmpty(message = "Please enter a model name.")
     public String getTvModel() {
         return tvModel;
     }
