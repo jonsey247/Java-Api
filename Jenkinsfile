@@ -1,6 +1,6 @@
 node {
    stage('Preparation') {
-      git 'https://github.com/eggsy84/mybackend-app.git'
+      git 'https://github.com/jonsey247/Java-Api.git'
    }
    stage('Clean') {
       sh "mvn -Dmaven.test.failure.ignore clean"
