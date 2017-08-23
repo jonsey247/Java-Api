@@ -12,4 +12,8 @@ node {
    stage('Docker Build') {
        sh "docker build -t mytvapp ."
    }
+
+   stage('Docker Deploy') {
+       sh "docker run -d -p 8081:8080 mytvapp"
+   }
 }
