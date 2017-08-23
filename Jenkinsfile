@@ -8,4 +8,8 @@ node {
    stage('Package') {
       sh "mvn -Dmaven.test.failure.ignore package"
    }
+
+   stage('Docker Build') {
+       sh "docker build -t mytvapp ."
+   }
 }
