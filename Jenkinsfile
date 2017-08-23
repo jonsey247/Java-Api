@@ -18,6 +18,11 @@ node {
        sh "docker build -t mytvapp ."
    }
 
+   stage('Stop app') {
+       sh "docker stop mytvapp || true"
+       sh "docker rm mytvapp || true"
+   }
+
    stage('Docker Deploy') {
        sh "docker run -d -p 8081:8080 mytvapp"
    }
