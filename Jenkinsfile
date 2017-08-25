@@ -24,6 +24,6 @@ node {
    }
 
    stage('Docker Deploy') {
-       sh "docker run -d -p 8081:8080 mytvapp"
+       sh "docker run -d --name mytvapp -p 8081:8080 mytvapp"
    }
 }
