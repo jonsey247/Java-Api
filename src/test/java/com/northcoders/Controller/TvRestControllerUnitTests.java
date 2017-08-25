@@ -103,6 +103,6 @@ public class TvRestControllerUnitTests {
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
         Mockito.verify(tvRepository, Mockito.times(1)).save(Mockito.any(Tv.class));
-        Assert.assertEquals(200, result.getResponse().getStatus());
+        Assert.assertEquals(202, result.getResponse().getStatus());
     }
 }
